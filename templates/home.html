@@ -1,54 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jovian Careers</title>
+    <title> Jovian Careers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <style>
-      h1{
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(50, 50, 50);
-        text-align: center;
-      }
-
       #banner {
-        width : 100%;
-        height : 360px;
-        object-fit: cover;
+      height: 360px;
+      width: 100%;
+      object-fit:cover;
       }
-
-      h2{
-        font-family: Roboto;
-        font-size: 32px;
-        color: rgb(100,100,100);
-        text-align: center;
-        font-weight: normal;
-      }
-
-      .bodytext {
-        color: rgb(80,80,80);
-      }
-
-      #container{
-        max-width: 720px;
-        margin-left: 200px;
-        margin: 0 auto 0 auto;
-      }
-    </style>
+    </style>    
   </head>
   <body>
-    <div id="container">
-      <h1>Jovian Careers</h1>
-      <img id="banner" src="https://jovian-careers-website.rahulhande.repl.co/static/banner1.jpeg">
-      <h2>About Jovian</h2>
-      <p class="bodytext">
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+      <img class="img-fluid" id="banner" src="https://jovian-careers-website.rahulhande.repl.co/static/banner1.jpeg">
+      <h2 class="text-center mt-4 mb-4">About Jovian</h2>
+      <p class="lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit volutpat maecenas volutpat blandit aliquam etiam. Accumsan tortor posuere ac ut. Pretium quam vulputate dignissim suspendisse in est. Id interdum velit laoreet id donec ultrices tincidunt arcu. Dignissim sodales ut eu sem integer vitae justo. Lectus quam id leo in vitae turpis massa sed elementum. Vel elit scelerisque mauris pellentesque pulvinar. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Sapien nec sagittis aliquam malesuada bibendum. Vitae sapien pellentesque habitant morbi. Feugiat nisl pretium fusce id velit. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Sem viverra aliquet eget sit amet tellus. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Purus ut faucibus pulvinar elementum integer enim neque volutpat. Eget mi proin sed libero. Amet consectetur adipiscing elit duis tristique sollicitudin nibh. Neque vitae tempus quam pellentesque nec nam aliquam.
       </p>
-      <h2>Open Positions</h2>
-      <p class="bodytext">TODO - Show the jobs here</p>
-      <div style="text-align:center;">
-        <button>Contact Us</button>
-        <p>Copyright 2022, Jovian</p>
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center" >
+        <button class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">Copyright 2022, Jovian</p>
       </div>
     </div>
   </body>
